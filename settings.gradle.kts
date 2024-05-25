@@ -1,5 +1,15 @@
-plugins {
-    id("org.gradle.toolchains.foojay-resolver-convention") version "0.10.0"
+pluginManagement {
+    repositories {
+        mavenCentral()
+        gradlePluginPortal()
+    }
 }
 
-rootProject.name = "Moonbit Intellij"
+plugins {
+    id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
+}
+
+rootProject.name = "Moonbit on Intellij"
+
+include("modules:moonbit")
+include("modules:wit")

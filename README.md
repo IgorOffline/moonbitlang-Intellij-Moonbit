@@ -1,19 +1,42 @@
-# Moonbit for Intellij based IDEs
+# Moonbit & WIT for IntelliJ based IDEs
 
-![Build](https://github.com/oovm/Wit-Intellij/workflows/Build/badge.svg)
-[![Version](https://img.shields.io/jetbrains/plugin/v/24001.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
-[![Downloads](https://img.shields.io/jetbrains/plugin/d/24001.svg)](https://plugins.jetbrains.com/plugin/PLUGIN_ID)
+This is a multi-module project containing IntelliJ plugins for multiple languages.
+
+## Modules
+
+### Moonbit Language (`modules/moonbit`)
+A [moonbit language](https://github.com/moonbitlang/core) plugin for IntelliJ-based IDEs.
+- Supports `*.mbt` and `*.mbti` file extensions
+
+### WIT IDL (`modules/wit`)
+A [Wasm Interface Type](https://github.com/WebAssembly/component-model/blob/main/design/mvp/WIT.md) plugin for IntelliJ-based IDEs.
+- Supports `*.wit`, `*.wion`, and `*.witx` file extensions
+
+## Build
+
+```bash
+# Build all modules
+./gradlew build
+
+# Build specific module
+./gradlew :modules:moonbit:buildPlugin
+./gradlew :modules:wit:buildPlugin
+```
+
+## Development
+
+```bash
+# Run IDE with all plugins
+./gradlew runIde
+
+# Run IDE with specific plugin
+./gradlew :modules:moonbit:runIde
+./gradlew :modules:wit:runIde
+```
 
 ## Features
 
 - Semantic Highlight
-
-![](https://github.com/oovm/WIT-Intellij/assets/17541209/8b1200e4-6107-4c0e-9def-2221f16827c1)
-
-- Code Formatting
-    - supports `.editorconfig`
-
+- Code Formatting (supports `.editorconfig`)
 - Structured View
-
-![](https://github.com/oovm/WIT-Intellij/assets/17541209/d4e851e3-f55f-4f0d-82b2-b587abefffd2)
-
+- Language Server Protocol support
